@@ -20,12 +20,26 @@ pandas==2.2.2
 scikit-learn==1.5.1
 joblib==1.4.2
 opencv-python-headless==4.10.0.84
-face_recognition==1.3.0
-tensorflow-cpu==2.16.1
 Pillow==10.4.0
 
 # --- Vector search ---
 faiss-cpu==1.8.0
+
+# --- Face recognition — installed as prebuilt wheels ---
+# Do NOT add plain `dlib` here: it compiles a large C++ library from
+# source and can exceed 8GB of RAM during that compile alone, which is
+# more than free-tier build machines (Render, GitHub Actions) have.
+# dlib-bin ships the same library as a prebuilt wheel — no compiler needed.
+# face_recognition itself is installed separately in the Dockerfile with
+# --no-deps so it doesn't pull in the real `dlib` package behind our backs;
+# face-recognition-models and Click below are its other real dependencies.
+dlib-bin==20.0.0
+face-recognition-models==0.3.0
+Click==8.1.7
+
+# NOTE: tensorflow-cpu is intentionally NOT listed here — it's installed
+# in its own Docker layer (see Dockerfile) so pip's dependency resolver
+# never has to reason about it alongside everything above in one pass.
 
 # --- Testing ---
 pytest==8.2.2
