@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS customers (
     phone VARCHAR(20),
     email VARCHAR(180),
     gender VARCHAR(20),
-    face_encoding DOUBLE PRECISION[],
+    face_encoding JSON,
     face_image VARCHAR(255),
     created_at TIMESTAMPTZ DEFAULT NOW()
 );

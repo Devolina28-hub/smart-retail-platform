@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime, func, ARRAY, Float
+from sqlalchemy import Column, Integer, String, DateTime, func, JSON
 from sqlalchemy.orm import relationship
 from app.database import Base
 
@@ -11,7 +11,10 @@ class Customer(Base):
     phone = Column(String(20), nullable=True)
     email = Column(String(180), nullable=True)
     gender = Column(String(20), nullable=True)
-    face_encoding = Column(ARRAY(Float), nullable=True)  # 128-d face_recognition vector
+    # 128-d face_recognition vector, stored as a JSON array of floats.
+    # JSON (not Postgres-only ARRAY) so the same model works against both
+    # SQLite in tests and Postgres in production without a dialect-specific type.
+    face_encoding = Column(JSON, nullable=True)
     face_image = Column(String(255), nullable=True)  # relative path under data/customers
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
