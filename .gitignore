@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# Node
+node_modules/
+dist/
+frontend/dist/
+
+# Env
+.env
+backend/.env
+frontend/.env
+
+# Data & models (large / user-provided — do not commit)
+backend/data/customers/*
+backend/data/products/*
+backend/data/reviews/*
+!backend/data/customers/.gitkeep
+!backend/data/products/.gitkeep
+!backend/data/reviews/.gitkeep
+backend/models_store/*.keras
+backend/models_store/*.pkl
+backend/models_store/*.json
+
+# DB
+*.db
+pgdata/
+
+# OS
+.DS_Store

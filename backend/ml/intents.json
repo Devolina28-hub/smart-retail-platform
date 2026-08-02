@@ -1,0 +1,59 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hi", "hello", "hey", "good morning", "good evening", "is anyone there"],
+      "responses": ["Hi there! Welcome to the store — how can I help you today?", "Hello! What can I help you find?"]
+    },
+    {
+      "tag": "return_policy",
+      "patterns": ["what is your return policy", "can i return an item", "how do returns work", "return window"],
+      "responses": ["You can return most items within 30 days of purchase with the original receipt, unworn and in original packaging."]
+    },
+    {
+      "tag": "shipping",
+      "patterns": ["how long does shipping take", "when will my order arrive", "do you ship internationally", "shipping cost"],
+      "responses": ["Standard shipping takes 3-5 business days. Express shipping (1-2 days) is available at checkout."]
+    },
+    {
+      "tag": "store_hours",
+      "patterns": ["what time do you open", "store hours", "when are you open", "closing time"],
+      "responses": ["Our stores are open Monday to Saturday, 10 AM to 9 PM, and Sunday 11 AM to 6 PM."]
+    },
+    {
+      "tag": "payment",
+      "patterns": ["what payment methods do you accept", "can i pay with card", "do you accept cash", "payment options"],
+      "responses": ["We accept all major credit/debit cards, UPI, net banking, and cash at physical stores."]
+    },
+    {
+      "tag": "refund",
+      "patterns": ["where is my refund", "how long does a refund take", "refund status", "when will i get my money back"],
+      "responses": ["Refunds are processed within 5-7 business days after we receive the returned item."]
+    },
+    {
+      "tag": "warranty",
+      "patterns": ["does this have a warranty", "warranty period", "is this covered under warranty"],
+      "responses": ["Most electronics carry a 1-year manufacturer warranty. Check the product page for specific terms."]
+    },
+    {
+      "tag": "offers",
+      "patterns": ["any offers", "discounts available", "current sale", "do you have coupons"],
+      "responses": ["Check our Offers page for the latest deals — we regularly run seasonal discounts and loyalty rewards."]
+    },
+    {
+      "tag": "product_help",
+      "patterns": ["i need help choosing a product", "recommend something", "which product is best", "help me pick"],
+      "responses": ["I'd be glad to help! Tell me what category you're shopping for and your budget, and I'll point you in the right direction."]
+    },
+    {
+      "tag": "loyalty",
+      "patterns": ["do you have a loyalty program", "reward points", "membership benefits"],
+      "responses": ["Yes! Our loyalty program gives you 1 point per $1 spent, redeemable for discounts on future purchases."]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["bye", "goodbye", "see you", "thanks bye", "that's all"],
+      "responses": ["Thanks for stopping by — have a great day!", "Goodbye! Come back soon."]
+    }
+  ]
+}
